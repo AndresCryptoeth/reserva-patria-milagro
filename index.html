@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserva Estratégica de Activos Digitales para Colombia · Resumen ejecutivo</title>
+<meta name="description" content="Convertir el patrimonio de extinción de dominio en una reserva soberana de activos digitales. Sin gasto público nuevo. Sin impuestos nuevos.">
+<meta property="og:title" content="Reserva Estratégica de Activos Digitales para Colombia">
+<meta property="og:description" content="Sin gasto público nuevo. Sin impuestos nuevos. La propuesta en 4 minutos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* --- paleta de marca Andrés Crypto: neutros ink + naranja block --- */
+  --fondo:#ffffff;
+  --bg-soft:#fafafa;        /* ink-50  */
+  --bg-tint:#f4f4f5;        /* ink-100 */
+  --ink-bg:#0c0c0e;         /* ink-950 */
+  --panel:#ffffff;
+  --panel-2:#fafafa;
+  --linea:#e4e4e7;          /* ink-200 */
+  --linea-2:#d4d4d8;        /* ink-300 */
+  --tinta:#18181b;          /* ink-900 */
+  --tinta-2:#3f3f46;        /* ink-700 */
+  --tinta-suave:#71717a;    /* ink-500 */
+  --acc:#f7931a;            /* block-500 · naranja de marca */
+  --acc-bril:#ffab47;       /* block-400 */
+  --acc-mag:#dd7c0a;        /* block-600 */
+  --oro:#dd7c0a;
+  --btc:#f7931a;
+  --verde-ok:#1ebe57;       /* wa-600 */
+  --rojo:#dc2626;
+  --grad:linear-gradient(120deg,#ffab47 0%,#f7931a 55%,#dd7c0a 100%);
+  --sombra-sm:0 1px 2px rgba(12,12,14,.05),0 10px 24px -18px rgba(12,12,14,.25);
+  --sombra:0 1px 2px rgba(12,12,14,.05),0 24px 48px -30px rgba(12,12,14,.3);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--fondo);color:var(--tinta);
+  font-family:'Archivo',system-ui,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.mono{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+/* ---------- encabezado ---------- */
+header{
+  border-bottom:1px solid var(--linea);padding:14px 0;
+  position:sticky;top:0;background:rgba(255,255,255,.88);backdrop-filter:saturate(180%) blur(12px);z-index:50;
+}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.marca-grupo{display:flex;align-items:center;gap:14px;min-width:0}
+.logo-top{height:26px;width:auto;display:block;flex-shrink:0}
+.marca{
+  font-weight:700;font-size:.9rem;color:var(--tinta);
+  padding-left:14px;border-left:1px solid var(--linea-2);
+}
+.marca span{color:var(--acc)}
+@media(max-width:620px){
+  .marca{padding-left:0;border-left:none;font-size:.82rem}
+  .marca-grupo{gap:10px;flex-wrap:wrap}
+}
+.precio-vivo{font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--tinta-suave)}
+.precio-vivo b{color:var(--tinta);font-weight:600}
+
+/* ---------- botones ---------- */
+.btn-cta{
+  display:inline-block;background:var(--grad);color:#fff !important;border-radius:100px;
+  padding:13px 26px;font-weight:600;font-size:.9rem;text-decoration:none;
+  box-shadow:0 8px 22px -10px rgba(221,124,10,.45);transition:transform .18s,box-shadow .18s;
+}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(221,124,10,.55)}
+.btn-ghost{
+  display:inline-block;border:1.5px solid var(--acc);color:var(--acc);border-radius:100px;
+  padding:12px 26px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .18s;
+}
+.btn-ghost:hover{background:rgba(247,147,26,.09);transform:translateY(-2px)}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+/* ---------- héroe ---------- */
+.hero{padding:64px 0 40px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-25%;right:-12%;width:58%;height:130%;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(247,147,26,.17),transparent 62%)}
+.hero::after{content:"";position:absolute;bottom:-35%;left:-14%;width:52%;height:115%;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(255,171,71,.13),transparent 60%)}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--acc);margin-bottom:16px;font-weight:600;
+}
+.eyebrow::before{content:"›";margin-right:.55em;font-weight:700}
+h1{
+  font-variation-settings:'wdth' 112;font-weight:760;
+  font-size:clamp(1.85rem,4.4vw,3rem);line-height:1.08;letter-spacing:-.022em;
+  max-width:23ch;color:var(--tinta);text-wrap:balance;
+}
+h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{max-width:60ch;color:var(--tinta-2);margin-top:20px;font-size:1.15rem}
+
+/* ---------- la tesis en 3 golpes ---------- */
+.tesis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+@media(max-width:760px){.tesis{grid-template-columns:1fr}}
+.golpe{
+  border:1px solid var(--linea);border-radius:16px;background:var(--panel);
+  padding:22px 24px;box-shadow:var(--sombra-sm);border-top:4px solid var(--acc);
+}
+.golpe .k{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tinta-suave);font-weight:600;margin-bottom:8px}
+.golpe .v{font-family:'Archivo',sans-serif;font-size:1.5rem;font-weight:750;
+  letter-spacing:-.02em;color:var(--tinta);line-height:1.1}
+.golpe .d{font-size:.86rem;color:var(--tinta-suave);margin-top:8px}
+
+/* ---------- secciones ---------- */
+section{padding:60px 0;position:relative;scroll-margin-top:70px}
+.sec-soft{background:var(--bg-soft)}
+.sec-tint{background:var(--bg-tint)}
+h2{
+  font-variation-settings:'wdth' 110;font-weight:740;
+  font-size:clamp(1.5rem,3.4vw,2.15rem);line-height:1.14;letter-spacing:-.018em;
+  max-width:24ch;margin-bottom:14px;color:var(--tinta);
+}
+.sub{color:var(--tinta-2);max-width:62ch;margin-bottom:26px;font-size:1rem}
+
+/* ---------- onda ---------- */
+.wave{display:block;width:100%;height:40px;line-height:0}
+.wave svg{display:block;width:100%;height:100%}
+
+/* ---------- cuenta regresiva ---------- */
+.reloj{
+  border:1px solid rgba(247,147,26,.28);border-radius:20px;
+  background:linear-gradient(155deg,#18181b 0%,#0c0c0e 100%);
+  padding:30px clamp(20px,4vw,40px);box-shadow:0 30px 60px -34px rgba(12,12,14,.55);
+  position:relative;margin-top:8px;
+}
+.reloj::before{
+  content:"CATALIZADOR REGULATORIO · EN CURSO";position:absolute;top:-10px;left:24px;
+  font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.14em;
+  color:#ffab47;background:#18181b;padding:3px 12px;border-radius:100px;border:1px solid rgba(247,147,26,.28);
+}
+.reloj-grid{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
+@media(max-width:700px){.reloj-grid{grid-template-columns:1fr;gap:18px}}
+.reloj-num{
+  font-family:'IBM Plex Mono',monospace;font-size:clamp(2.6rem,8vw,4.4rem);
+  font-weight:600;line-height:1;color:var(--btc);font-variant-numeric:tabular-nums;
+}
+.reloj-num small{display:block;font-size:.2em;color:#a1a1aa;letter-spacing:.16em;
+  text-transform:uppercase;margin-top:10px;font-weight:500}
+.reloj p{color:#d4d4d8;font-size:.96rem;line-height:1.55}
+.reloj p b{color:#fff}
+.reloj .fuente{font-size:.74rem;color:#71717a;margin-top:12px}
+.reloj .fuente a{color:#ffab47}
+
+/* ---------- qué representan estos activos ---------- */
+.tesis-activos{margin-top:30px}
+.cita{
+  font-size:clamp(1.15rem,2.5vw,1.45rem);line-height:1.45;color:var(--tinta);
+  font-weight:500;letter-spacing:-.012em;max-width:44ch;
+  padding-left:22px;border-left:4px solid;border-image:var(--grad) 1;
+}
+.cita b{font-weight:750;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cita-sub{font-size:.95rem;color:var(--tinta-2);max-width:62ch;margin-top:16px}
+.capas{display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:12px;margin-top:22px}
+.capa{
+  display:block;text-decoration:none;color:inherit;
+  border:1px solid var(--linea);border-radius:14px;background:var(--panel);
+  padding:18px 20px;box-shadow:var(--sombra-sm);transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.capa:hover{transform:translateY(-3px);border-color:var(--acc);box-shadow:var(--sombra)}
+.capa:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.capa .ir{
+  display:block;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;
+  color:var(--acc);margin-top:11px;letter-spacing:.02em;
+}
+.capa:hover .ir{text-decoration:underline}
+.capa .tk{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.66rem;font-weight:600;
+  letter-spacing:.1em;color:#fff;background:var(--grad);padding:4px 10px;border-radius:100px;margin-bottom:10px;
+}
+.capa b{display:block;font-size:.97rem;color:var(--tinta);font-weight:700;margin-bottom:5px}
+.capa span:not(.tk){display:block;font-size:.82rem;color:var(--tinta-suave);line-height:1.45}
+.capas-nota{font-size:.78rem;color:var(--tinta-suave);max-width:72ch;margin-top:16px}
+
+/* ---------- tarjetas ---------- */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px}
+@media(max-width:760px){.grid-2{grid-template-columns:1fr}}
+.card{
+  border:1px solid var(--linea);border-radius:16px;padding:22px 24px;
+  background:var(--panel);box-shadow:var(--sombra-sm);transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.card:hover{transform:translateY(-3px);border-color:var(--acc);box-shadow:var(--sombra)}
+.card .k{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--acc);font-weight:600;margin-bottom:8px}
+.card .num{font-family:'IBM Plex Mono',monospace;font-size:1.5rem;font-weight:600;
+  color:var(--tinta);font-variant-numeric:tabular-nums;letter-spacing:-.01em;line-height:1.1}
+.card .d{font-size:.85rem;color:var(--tinta-suave);margin-top:8px}
+.card .d a{color:var(--acc);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(247,147,26,.35)}
+.card .d a:hover{border-bottom-color:var(--acc)}
+.card.verde{border-left:4px solid var(--verde-ok)}
+.card.rojo{border-left:4px solid var(--rojo)}
+.bandera{font-size:1.6rem;line-height:1;margin-bottom:6px}
+
+/* ---------- la cuenta del dinero ---------- */
+.flujo{display:grid;gap:0;margin-top:8px}
+.flujo-paso{
+  display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start;
+  padding:20px 0;border-bottom:1px solid var(--linea);
+}
+.flujo-paso:last-child{border-bottom:none}
+.flujo-n{
+  font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:600;color:#fff;
+  background:var(--grad);width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.flujo-t{font-weight:700;font-size:1.02rem;color:var(--tinta);margin-bottom:4px}
+.flujo-d{font-size:.9rem;color:var(--tinta-suave)}
+
+/* ---------- callout ---------- */
+.callout{
+  border:1px solid var(--linea);border-left:4px solid var(--acc);border-radius:14px;
+  padding:22px 26px;margin-top:24px;background:var(--panel);box-shadow:var(--sombra-sm);
+}
+.callout .t{font-size:1.18rem;line-height:1.45;color:var(--tinta);font-weight:500}
+.callout .t b{color:var(--acc)}
+.callout .n{font-size:.82rem;color:var(--tinta-suave);margin-top:10px}
+
+/* ---------- el desafío ---------- */
+.desafio{
+  border:1px solid rgba(247,147,26,.28);border-radius:20px;
+  background:linear-gradient(155deg,#18181b 0%,#0c0c0e 100%);
+  padding:34px clamp(22px,4vw,42px);box-shadow:0 30px 60px -34px rgba(12,12,14,.55);margin-top:26px;
+}
+.desafio h3{font-size:clamp(1.3rem,3vw,1.75rem);font-weight:750;color:#fff;
+  letter-spacing:-.02em;line-height:1.2;margin-bottom:14px;max-width:26ch}
+.desafio p{color:#d4d4d8;font-size:.97rem;line-height:1.6;max-width:66ch}
+.desafio p + p{margin-top:12px}
+.desafio b{color:#fff}
+.desafio .destaca{color:var(--btc);font-weight:600}
+.veredicto{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+@media(max-width:640px){.veredicto{grid-template-columns:1fr}}
+.veredicto div{border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px 18px;background:rgba(255,255,255,.03)}
+.veredicto .r{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.13em;
+  text-transform:uppercase;color:#ffab47;font-weight:600;margin-bottom:6px}
+.veredicto .x{color:#e4e4e7;font-size:.9rem;line-height:1.5}
+
+/* ---------- pedido ---------- */
+.pedido-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
+@media(max-width:760px){.pedido-grid{grid-template-columns:1fr}}
+
+/* ---------- notas y footer ---------- */
+.nota{font-size:.78rem;color:var(--tinta-suave);max-width:74ch;margin-top:18px}
+.nota a{color:var(--acc)}
+footer{background:var(--ink-bg);padding:48px 0 54px;font-size:.82rem;color:#a1a1aa}
+footer b{color:#fff}
+footer a{color:#ffab47}
+
+/* ---------- pie: marca y redes ---------- */
+.pie-logo{height:46px;width:auto;display:block;margin-bottom:12px}
+.pie-marca-texto{
+  display:none;font-family:'Archivo',sans-serif;font-weight:800;font-size:1.35rem;
+  letter-spacing:-.02em;color:#fff;margin-bottom:10px;
+}
+.pie-lema{font-size:.86rem;color:#a1a1aa;max-width:52ch;line-height:1.55}
+.redes{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 26px}
+.redes a{
+  display:flex;align-items:center;justify-content:center;width:40px;height:40px;
+  border-radius:50%;border:1px solid rgba(255,255,255,.16);color:#d4d4d8;
+  transition:all .2s;background:rgba(255,255,255,.04);
+}
+.redes a:hover{background:var(--grad);border-color:transparent;color:#fff;transform:translateY(-3px)}
+.redes a:focus-visible{outline:2px solid #ffab47;outline-offset:2px}
+.redes svg{width:17px;height:17px}
+.pie-legal{border-top:1px solid rgba(255,255,255,.12);padding-top:22px}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1)}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ---------- impresión ---------- */
+@media print{
+  header,.ctas,.wave{display:none !important}
+  .reveal{opacity:1 !important;transform:none !important}
+  body{font-size:10.5pt;background:#fff}
+  section{padding:18px 0;page-break-inside:avoid;background:#fff !important}
+  h1{font-size:19pt}h2{font-size:13pt}
+  .card,.golpe,.callout,.reloj,.desafio,.capa,.tesis-activos{box-shadow:none;break-inside:avoid}
+  .cita b{color:#111 !important;-webkit-text-fill-color:#111}
+  .capa .tk{background:#eee !important;color:#111 !important}
+  .reloj,.desafio{background:#fff !important;border:1px solid #ccc}
+  .reloj p,.reloj-num small,.desafio p,.veredicto .x{color:#333 !important}
+  .desafio h3,.reloj p b,.desafio b{color:#111 !important}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;color:#666;word-break:break-all}
+  footer{background:#fff;color:#111;border-top:1px solid #ccc}
+  footer b,footer a{color:#111}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="marca-grupo">
+      <img src="logo-dark-text.png" alt="Fuera del Sistema, por Andrés Crypto" class="logo-top"
+           onerror="this.style.display='none'">
+      <div class="marca">Reserva Estratégica de <span>Activos Digitales</span> · Colombia</div>
+    </div>
+    <div class="precio-vivo">BTC/USD <b id="hPrecio">—</b> <span id="hFuente"></span></div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HÉROE ============ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Propuesta de política pública · Lectura: 4 minutos</div>
+    <h1>¿Por qué el mandato 2026–2030 es la ventana de oportunidad para que Colombia pueda construir su <em>reserva estratégica de activos digitales</em> — y cómo hacerlo sin incrementar el gasto público ni crear nuevos impuestos?</h1>
+    <p class="lede">
+      Los bienes de extinción de dominio hoy cuestan más de lo que producen. Esta propuesta convierte
+      esa carga en patrimonio soberano, auditable en cadena por cualquier ciudadano.
+    </p>
+
+    <div class="tesis">
+      <div class="golpe">
+        <div class="k">Qué se propone</div>
+        <div class="v">Reserva soberana</div>
+        <div class="d">Custodia fría multifirma, con saldo público en tiempo real.</div>
+      </div>
+      <div class="golpe">
+        <div class="k">Qué cuesta</div>
+        <div class="v">COP 0 nuevos</div>
+        <div class="d">Ni deuda ni impuestos: se redirige recaudo que ya existe.</div>
+      </div>
+      <div class="golpe">
+        <div class="k">Qué se pide hoy</div>
+        <div class="v">Solo estudiarlo</div>
+        <div class="d">Una mesa técnica y una validación científica.</div>
+      </div>
+    </div>
+
+    <div class="ctas">
+      <a href="#pedido" class="btn-cta">Ver qué se pide →</a>
+      <a href="https://reserva-digital-colombia.vercel.app/" target="_blank" rel="noopener" class="btn-ghost">Leer el documento completo</a>
+    </div>
+  </div>
+</div>
+
+<div class="wave" style="background:#ffffff"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0,20 C240,40 480,3 720,17 C960,31 1200,44 1440,23 L1440,40 L0,40 Z" fill="#f4f4f5"></path></svg></div>
+
+<!-- ============ 01 · POR QUÉ AHORA ============ -->
+<section id="ahora" class="sec-tint">
+  <div class="wrap">
+    <div class="eyebrow">01 · Por qué ahora</div>
+    <h2>Estados Unidos está a un voto de abrirle la puerta a un nuevo sistema financiero.</h2>
+    <p class="sub">
+      El <b>CLARITY Act</b> define quién regula qué en activos digitales — y destraba la entrada plena de
+      la banca y los fondos de pensiones de EE. UU.
+    </p>
+
+    <div class="reloj">
+      <div class="reloj-grid">
+        <div>
+          <div class="reloj-num" id="diasRestantes">—<small>días para el voto</small></div>
+        </div>
+        <div>
+          <p>
+            <b>15 de septiembre de 2026:</b> voto en el Senado. Ya pasó la Cámara y el Comité Bancario
+            con apoyo bipartidista. Cuando la regla quede escrita, el capital institucional que hoy
+            espera entra sin fricción. <b>Colombia debería estar posicionada antes, no después.</b>
+          </p>
+          <p class="fuente">
+            Trámite verificable en <a href="https://www.congress.gov/bill/119th-congress/house-bill/3633" target="_blank" rel="noopener">congress.gov · H.R. 3633</a>. El voto es procedimental.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tesis-activos">
+      <p class="cita">
+        Lo que estos activos realmente representan es
+        <b>la tecnología sobre la que se está construyendo esta nueva arquitectura financiera</b>.
+        La expansión de valor sobre estos activos será generacional.
+      </p>
+      <p class="cita-sub">
+        No es una sola moneda: es una clase de activo con funciones distintas dentro de la misma
+        infraestructura — y con un horizonte de generación de valor medido en décadas, no en trimestres.
+        Cada uno es un proyecto abierto y auditable: compruébalo tú mismo.
+      </p>
+      <div class="capas">
+        <a class="capa" href="https://bitcoin.org/es/" target="_blank" rel="noopener"><span class="tk">BTC</span><b>Reserva de valor</b><span>El oro digital: oferta limitada, la base patrimonial de la reserva.</span><span class="ir">bitcoin.org ↗</span></a>
+        <a class="capa" href="https://ethereum.org/es/" target="_blank" rel="noopener"><span class="tk">ETH</span><b>Capa de liquidación</b><span>Donde se ejecutan los contratos y se tokenizan los activos del mundo real.</span><span class="ir">ethereum.org ↗</span></a>
+        <a class="capa" href="https://xrpl.org/" target="_blank" rel="noopener"><span class="tk">XRP</span><b>Pagos transfronterizos</b><span>Liquidación entre monedas y entre bancos, en segundos.</span><span class="ir">xrpl.org ↗</span></a>
+        <a class="capa" href="https://chain.link/" target="_blank" rel="noopener"><span class="tk">LINK</span><b>Conexión con el mundo real</b><span>Lleva los datos verificados a la cadena: sin eso no hay tokenización.</span><span class="ir">chain.link ↗</span></a>
+      </div>
+      <p class="capas-nota">
+        Bitcoin sería el núcleo de la reserva. La composición exacta de la capa de infraestructura, sus
+        límites y sus reglas los definiría la mesa técnica — no esta página. Los nombres se citan por su
+        función dentro de la arquitectura, no como recomendación de inversión.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:#f4f4f5"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0,20 C240,40 480,3 720,17 C960,31 1200,44 1440,23 L1440,40 L0,40 Z" fill="#fafafa"></path></svg></div>
+
+<!-- ============ 02 · QUIÉNES YA LO HACEN ============ -->
+<section id="quienes" class="sec-soft">
+  <div class="wrap">
+    <div class="eyebrow">02 · Quiénes ya lo están haciendo</div>
+    <h2>La carrera por acumular estos activos ya arrancó.</h2>
+    <p class="sub">
+      No es una tendencia: es doctrina de Estado. Varios gobiernos ya custodian, y Brasil ya tramita su
+      ley — van por <b style="color:var(--acc);font-weight:700">1 millón de BTC en 5 años</b>.
+    </p>
+
+    <div class="grid-3">
+      <div class="card verde">
+        <div class="bandera">🇺🇸</div>
+        <div class="k">Estados Unidos</div>
+        <div class="num">~328.000 BTC</div>
+        <div class="d">
+          Reserva creada por orden ejecutiva con monedas incautadas: el mismo origen que tendría la de Colombia.
+          <br><a href="https://arkm.com/explorer/entity/usg" target="_blank" rel="noopener">Auditar sus billeteras →</a>
+        </div>
+      </div>
+      <div class="card verde">
+        <div class="bandera">🇸🇻</div>
+        <div class="k">El Salvador</div>
+        <div class="num">7.747 BTC</div>
+        <div class="d">
+          Compra 1 BTC diario desde 2021 y publica cada movimiento.
+          <br><a href="https://bitcoin.gob.sv/es/" target="_blank" rel="noopener">Ver su reserva oficial →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="bandera">🇨🇳</div>
+        <div class="k">China</div>
+        <div class="num">~190.000 BTC</div>
+        <div class="d">Prohíbe el trading. Nunca vendió lo que incautó.</div>
+      </div>
+      <div class="card">
+        <div class="bandera">🇧🇷</div>
+        <div class="k">Brasil</div>
+        <div class="num">PL 4.501</div>
+        <div class="d">El vecino ya legisla su reserva. Aquí todavía no se estudia.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">
+        En blockchain la transparencia no es una promesa del gobierno de turno: <b>es una propiedad del activo</b>.
+      </div>
+      <div class="n">Cifras a agosto de 2026 · <a href="https://bitcointreasuries.net/governments" target="_blank" rel="noopener">bitcointreasuries.net</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:#fafafa"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0,20 C240,40 480,3 720,17 C960,31 1200,44 1440,23 L1440,40 L0,40 Z" fill="#ffffff"></path></svg></div>
+
+<!-- ============ 03 · DE DÓNDE SALE EL DINERO ============ -->
+<section id="dinero">
+  <div class="wrap">
+    <div class="eyebrow">03 · De dónde sale el dinero</div>
+    <h2 style="max-width:30ch">Existen activos incautados que le cuestan miles de millones a la Nación: vamos a convertirlos en activos con <b style="color:var(--acc);font-weight:760">95% menos costo operativo</b> y mayor potencial de crecimiento.</h2>
+    <p class="sub">
+      No se trata de sustituir a la SAE, sino de complementar su gestión con una clase de activo de
+      custodia eficiente: sin costos de vigilancia, sin riesgo de ocupación, sin depreciación por abandono.
+    </p>
+
+    <div class="grid-2">
+      <div class="card verde">
+        <div class="k">Lo que ya entra</div>
+        <div class="num">COP 1,14 billones</div>
+        <div class="d">Remates 2025 · 241% sobre la meta.</div>
+      </div>
+      <div class="card verde">
+        <div class="k">Lo que se administra</div>
+        <div class="num">38.000+ activos</div>
+        <div class="d">Inmuebles, vehículos, sociedades, comercios.</div>
+      </div>
+      <div class="card rojo">
+        <div class="k">Lo que cuesta sostenerlo</div>
+        <div class="num">COP 50+ mil M/año</div>
+        <div class="d">Solo funcionamiento. Más de 500 cargos.</div>
+      </div>
+      <div class="card rojo">
+        <div class="k">Lo que se pierde</div>
+        <div class="num">−94,9%</div>
+        <div class="d">Caída de retomas en un año. Recuperar lo propio se volvió inviable.</div>
+      </div>
+    </div>
+
+    <div style="border:1px solid var(--linea);border-radius:18px;background:var(--panel-2);padding:8px 26px;margin-top:26px;box-shadow:var(--sombra-sm)">
+      <div class="flujo">
+        <div class="flujo-paso">
+          <div class="flujo-n">1</div>
+          <div>
+            <div class="flujo-t">La cripto ya incautada deja de subastarse</div>
+            <div class="flujo-d">Una directiva administrativa. Cero pesos, cero leyes.</div>
+          </div>
+        </div>
+        <div class="flujo-paso">
+          <div class="flujo-n">2</div>
+          <div>
+            <div class="flujo-t">Un piloto acotado con el recaudo de remates</div>
+            <div class="flujo-d">Publicado a diario. Su evidencia es el argumento ante el Congreso.</div>
+          </div>
+        </div>
+        <div class="flujo-paso">
+          <div class="flujo-n">3</div>
+          <div>
+            <div class="flujo-t">La reforma legal, solo si el piloto lo justifica</div>
+            <div class="flujo-d">Modificar la destinación del FRISCO (Ley 1708).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="t">
+        No proponemos comprar una reserva con dinero de los colombianos: proponemos
+        <b>construirla con patrimonio que el Estado ya posee</b>.
+      </div>
+      <div class="n">No toca las reservas del Banco de la República ni sustituye a la SAE. Fuentes: SAE 2025, Contraloría, Procuraduría.</div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:#ffffff"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0,20 C240,40 480,3 720,17 C960,31 1200,44 1440,23 L1440,40 L0,40 Z" fill="#f4f4f5"></path></svg></div>
+
+<!-- ============ 04 · EL PEDIDO ============ -->
+<section id="pedido" class="sec-tint">
+  <div class="wrap">
+    <div class="eyebrow">04 · Lo único que se pide hoy</div>
+    <h2>Dos decisiones de costo cero. Ninguna compromete un peso.</h2>
+    <p class="sub">No se pide adoptarla. Se pide estudiarla — y ponerla a prueba con quienes pueden destruirla.</p>
+
+    <div class="pedido-grid">
+      <div class="card">
+        <div class="k">Pedido 1 · Costo cero</div>
+        <div class="num" style="font-size:1.15rem;font-family:'Archivo',sans-serif;font-weight:750">Una mesa técnica de exploración</div>
+        <div class="d">Con el equipo de gobierno: lo financiero, lo jurídico y lo operativo. Sin compromiso de adopción.</div>
+      </div>
+      <div class="card">
+        <div class="k">Pedido 2 · Costo cero</div>
+        <div class="num" style="font-size:1.15rem;font-family:'Archivo',sans-serif;font-weight:750">Que la ciencia colombiana lo audite</div>
+        <div class="d">Que la comunidad matemática y científica le examine el modelo económico a Bitcoin. No a confirmarlo: a romperlo.</div>
+      </div>
+    </div>
+
+    <div class="desafio">
+      <h3>El desafío: encuéntrenle la falla.</h3>
+      <p>
+        Bitcoin es un algoritmo: emisión limitada a 21 millones, reglas que ninguna autoridad puede
+        alterar. Matemática auditable, no opinión de mercado. La pregunta, con rigor y sin fe:
+        <span class="destaca">si ese modelo se sostiene, ¿es alcanzable USD 1 millón por bitcoin en la
+        próxima década?</span> Hay proyecciones que lo plantean; ninguna es prueba. El pedido no es que
+        nos crean: es que <b>lo intenten refutar</b>.
+      </p>
+      <div class="veredicto">
+        <div>
+          <div class="r">Si encuentran la falla</div>
+          <div class="x">Colombia se ahorra el error antes de arriesgar un peso.</div>
+        </div>
+        <div>
+          <div class="r">Si no la encuentran</div>
+          <div class="x">El Estado obtiene gratis una validación científica independiente.</div>
+        </div>
+      </div>
+      <p style="margin-top:18px;font-size:.86rem;color:#71717a">No hay escenario en el que el país pierda por estudiarlo.</p>
+    </div>
+
+    <div class="ctas" style="margin-top:30px">
+      <a href="https://wa.me/573104252940?text=Hola%20Andr%C3%A9s%2C%20escribo%20por%20la%20propuesta%20de%20Reserva%20Estrat%C3%A9gica%20de%20Activos%20Digitales%20para%20Colombia" target="_blank" rel="noopener" class="btn-cta">Coordinar la mesa técnica →</a>
+      <a href="https://reserva-digital-colombia.vercel.app/" target="_blank" rel="noopener" class="btn-ghost">Ver el documento completo con simuladores</a>
+    </div>
+
+    <p class="nota">
+      El documento extenso incluye la retrospectiva con precios reales, el simulador del ciclo 2026–2030
+      y el análisis de riesgos. Obra registrada ante la DNDA · radicado 1-2026-142867.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="pie-marca">
+      <img src="logo.png" alt="Fuera del Sistema, por Andrés Crypto" class="pie-logo"
+           onerror="this.style.display='none';document.getElementById('marcaTexto').style.display='block'">
+      <div id="marcaTexto" class="pie-marca-texto">Andrés Crypto</div>
+      <p class="pie-lema">
+        Consultor en blockchain, estratega e inversor en activos digitales.
+        Divulgación y análisis para que Colombia entienda lo que viene.
+      </p>
+    </div>
+
+    <nav class="redes" aria-label="Redes sociales de Andrés Crypto">
+      <a href="https://x.com/andrescryptoeth" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/andrescrypto.eth" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0m0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32m0 10.16a4 4 0 110-8 4 4 0 010 8m7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@andrescrypto.eth" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      </a>
+      <a href="https://youtube.com/@andrescrypto_eth" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 00.5 6.19C0 8.08 0 12 0 12s0 3.92.5 5.81a3.02 3.02 0 002.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 002.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.81M9.55 15.57V8.43L15.82 12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/andrescrypto" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12M7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0"/></svg>
+      </a>
+    </nav>
+
+    <div class="pie-legal">
+      <b>Reserva Estratégica de Activos Digitales para Colombia</b> · Iniciativa ciudadana de política
+      pública · Andrés Guzmán ·
+      <a href="https://github.com/AndresCryptoeth/reserva-bitcoin-colombia" target="_blank" rel="noopener">Código abierto</a>
+      <br><br>
+      <span style="font-size:.76rem;opacity:.8">
+        Cifras públicas presentadas como insumo de análisis, no como asesoría financiera.
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ---------- cuenta regresiva al voto del Senado ----------
+(function(){
+  const VOTO = new Date('2026-09-15T00:00:00-04:00');
+  const el = document.getElementById('diasRestantes');
+  if(!el) return;
+  const dias = Math.ceil((VOTO - new Date()) / 86400000);
+  if(dias > 0){
+    el.innerHTML = dias + '<small>día' + (dias===1?'':'s') + ' para el voto</small>';
+  } else if(dias === 0){
+    el.innerHTML = 'HOY<small>vota el Senado de EE. UU.</small>';
+  } else {
+    el.innerHTML = 'YA<small>el Senado ya votó · verificar resultado</small>';
+    el.style.fontSize = 'clamp(2rem,6vw,3.2rem)';
+  }
+})();
+
+// ---------- precio BTC en vivo ----------
+(async function(){
+  const el = document.getElementById('hPrecio'), f = document.getElementById('hFuente');
+  const pintar = (v, etiqueta) => {
+    el.textContent = '$' + Math.round(v).toLocaleString('es-CO');
+    f.textContent = etiqueta;
+  };
+  try{
+    const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd',
+      {signal:AbortSignal.timeout(4500)});
+    const j = await r.json();
+    if(j?.bitcoin?.usd){ pintar(j.bitcoin.usd, '· en vivo'); return; }
+    throw new Error('sin dato');
+  }catch(e){
+    pintar(64500, '· referencia ago. 2026');
+  }
+})();
+
+// ---------- animación de entrada ----------
+(function(){
+  const objetivos = document.querySelectorAll('section .wrap > *, .hero .wrap > *');
+  objetivos.forEach(el => el.classList.add('reveal'));
+  const obs = new IntersectionObserver(entradas => {
+    entradas.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  objetivos.forEach(el => obs.observe(el));
+})();
+</script>
+</body>
+</html>
